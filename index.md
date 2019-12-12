@@ -1440,7 +1440,7 @@ public class SeperateChainingHashST<Key, Value> {
 **Bottom-up** Partially sort and merge
 
 - `int lo=0; lo<N-sz; lo += sz+sz`
-- ex) 20 <- 16/4 <- 8/8/4 <- 4/4/4/4/4 <- 2/2/2/2/2/2/2/2/2/2
+- ex) 20 <- 16/4 <- 8/8/4 <- 4/4/4/4/4 <-- 2/2/2/2/2/2/2/2/2/2
 
 ### Quick Sort
 
