@@ -8,7 +8,8 @@ modified: 2019-12-12
 Made by 20190480 Won-Joon Lee
 
 Textbook
--  Goodrich, M. T., Tamassia, R., & Goldwasser, M. H. (2014). Data structures and algorithms in Java. John Wiley & Sons.
+
+- Goodrich, M. T., Tamassia, R., & Goldwasser, M. H. (2014). Data structures and algorithms in Java. John Wiley & Sons.
 - Sedgewick, R., & Wayne, K. (2011). Algorithms, 4th Edition, Addison-Wesley Professional. https://algs4.cs.princeton.edu/home/
 
 ---
@@ -93,14 +94,15 @@ do {
 ```
 
 **Scanner** java.util.Scanner
-| Method | Description |
-|--------|--------------------|
-| hasNext() | Returns true iff there is another token in the input stream |
-| next() | Returns the next token **string** in the input strea; NoSuchElementException |
+
+| Method          | Description                                                                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hasNext()       | Returns true iff there is another token in the input stream                                                                                                                  |
+| next()          | Returns the next token **string** in the input strea; NoSuchElementException                                                                                                 |
 | hasNext*Type*() | Returns true iff there is another token in the input stream and it can be interpreted as the corresponding base type, _Type_(Boolean, Byte, Double, Float, Int, Long, Short) |
-| next*Type*() | Returns the next token in the input stream andreturn as the base type, _Type_ |
-| hasNextLine() | Returns true iff the input stream has another line of text |
-| nextLine() | Advances the input past the current line ending and returns the input that was skipped |
+| next*Type*()    | Returns the next token in the input stream andreturn as the base type, _Type_                                                                                                |
+| hasNextLine()   | Returns true iff the input stream has another line of text                                                                                                                   |
+| nextLine()      | Advances the input past the current line ending and returns the input that was skipped                                                                                       |
 
 ```java
 Scanner input = new Scanner(System.in);
@@ -108,20 +110,21 @@ int a = input.nextInt();
 ```
 
 **Math**
-| _type_ method(_type_ parameter) | Description |
-|---------------|-------------|
-| _double_ abs(_double_ a) | absolute value of a |
-| _double_ max(_double_ a, _double_ b) | maximum of a and b |
-| _double_ min(_double_ a, _double_ b) | minimum of a and b |
-| _double_ sin(_double_ theta) | sine function |
-| _double_ cos(_double_ theta) | cosine function |
-| _double_ tan(_double_ theta) | tangent function |
-| _double_ exp(_double_ a) | exponential ($e^a$) |
-| _double_ log(_double_ a) | natural log ($log_{e} a$, or $ln{a}$) |
-| _double_ pow(_double_ a, _double_ b) | raise a to the bth power($a^b$) |
-| _long_ round(_double_ a) | round to the nearest integer |
-| _double_ random() | random number in $[0.1)$ |
-| _double_ sqrt(_double_ a) | square root of a |
+
+| _type_ method(_type_ parameter)      | Description                           |
+| ------------------------------------ | ------------------------------------- |
+| _double_ abs(_double_ a)             | absolute value of a                   |
+| _double_ max(_double_ a, _double_ b) | maximum of a and b                    |
+| _double_ min(_double_ a, _double_ b) | minimum of a and b                    |
+| _double_ sin(_double_ theta)         | sine function                         |
+| _double_ cos(_double_ theta)         | cosine function                       |
+| _double_ tan(_double_ theta)         | tangent function                      |
+| _double_ exp(_double_ a)             | exponential ($e^a$)                   |
+| _double_ log(_double_ a)             | natural log ($log_{e} a$, or $ln{a}$) |
+| _double_ pow(_double_ a, _double_ b) | raise a to the bth power($a^b$)       |
+| _long_ round(_double_ a)             | round to the nearest integer          |
+| _double_ random()                    | random number in $[0.1)$              |
+| _double_ sqrt(_double_ a)            | square root of a                      |
 
 | _type_ variable | Description           |
 | --------------- | --------------------- |
