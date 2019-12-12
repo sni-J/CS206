@@ -145,13 +145,13 @@ Convert number to string for "+"
 
 Make numeric types match if no loss of precision
 
-- ex) `11*0.25`: int(11) -> double(11.00)
+- ex) `11*0.25`: int(11) &rarr; double(11.00)
 
 ### Function Call
 
 Follows return type
 
-- ex) `Integer.parseInt(String s)`: String -> int
+- ex) `Integer.parseInt(String s)`: String &rarr; int
 
 ### Explicit Cast
 
@@ -159,7 +159,7 @@ For values that belong to multiple types, we can cast the specific type
 
 - ex) small integers: can be short, int, long
 - ex) double can be truncated to int
-  - `(int)2.71828`: double -> int, value is 2
+  - `(int)2.71828`: double &rarr; int, value is 2
 
 **Relative Question (Exercise 1 - Q.1)**
 
@@ -252,7 +252,7 @@ public class ~~~ implements ??? { ...   // ???: Interface
 
 - Every object is an instance of a class
 
-  -> Client can use ADT without knowing implementation details
+  &rarr; Client can use ADT without knowing implementation details
 
 ### Modularity
 
@@ -679,8 +679,8 @@ It is related to how much it repeats totally
 
 **Problems**
 
-- Array may become full -> limit on the collection size
-- Memory use of array is fixed -> nonlinear
+- Array may become full &rarr; limit on the collection size
+- Memory use of array is fixed &rarr; nonlinear
 
 ### Linked list stack
 
@@ -856,7 +856,7 @@ public class ArrayList<E> implements List<E> {
 
 **fixed maximum capacity** cause inefficient waste or easily exhausting capacity
 
--> Dynamically adjust the size of the array
+&rarr; Dynamically adjust the size of the array
 
 - if capacity is exhausted, requests a new, larger array
 - copies all references from the smaller array into the beginning of the new array
@@ -903,7 +903,7 @@ protected void resize(int capacity) {
 - Worst case (doubling) takes O(n)
 - Most case takes O(1)
 
-  -> for n=2^k, total running time of n push operations is T(n) = n+1+2+4+ ... +2^k=n+2^{k+1}-1=3n-1=O(n).
+  &rarr; for n=2^k, total running time of n push operations is T(n) = n+1+2+4+ ... +2^k=n+2^{k+1}-1=3n-1=O(n).
 
 Thus, amortized running time of each push operation is O(1) in doubling-and-halving strategy
 
@@ -1075,9 +1075,9 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
 **Comparable** Interface based on the natural ordering
 
 - Promise to provide `a.compareTo(b)` method, which returns an integer with following meaning:
-  - i<0 -> a<b
-  - i=0 -> a=b
-  - i>0 -> a>b
+  - i<0 &rarr; a<b
+  - i=0 &rarr; a=b
+  - i>0 &rarr; a>b
 - If it is incompatible type or either is null, throws an exception
 
 ```java
@@ -1157,7 +1157,7 @@ public class MaxPQ<Key extends Comparable\<Key\>\>
 - **heap-ordered** key in each node is larger than or equal to the keys in that node's two children
   - **Max-heap** a[k/2] >= a[k], **Min-heap** a[k/2] <= a[k]
 - Array representation
-  - 1-based indexing -> simplifies arithmetic
+  - 1-based indexing &rarr; simplifies arithmetic
   - Take nodes in level order
   - a[1]: root, a[2]: left child of root, a[3]: right child of root, ...
 - Can use array indices to move through tree
@@ -1377,7 +1377,7 @@ public class SeperateChainingHashST<Key, Value> {
 - Insert
   - Shape of tree depends on insertion order
   - get/put/remove take O(h) times where h is height of tree
-    -> need to be balanced
+    &rarr; need to be balanced
 
 ### Balanced Search Trees
 
@@ -1435,12 +1435,12 @@ public class SeperateChainingHashST<Key, Value> {
 
 **Top-down** Divide and Merge
 
-- ex) 20 <- 10/10 <- 5/5/5/5 <- 3/2/3/2/3/2/3/2 <- 2/1/1/1/2/1/1/1/2/1/1/1/2/1/1/1 <- 1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1
+- ex) 20 &larr; 10/10 &larr; 5/5/5/5 &larr; 3/2/3/2/3/2/3/2 &larr; 2/1/1/1/2/1/1/1/2/1/1/1/2/1/1/1 &larr; 1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1
 
 **Bottom-up** Partially sort and merge
 
 - `int lo=0; lo<N-sz; lo += sz+sz`
-- ex) 20 <- 16/4 <- 8/8/4 <- 4/4/4/4/4 <-- 2/2/2/2/2/2/2/2/2/2
+- ex) 20 &larr; 16/4 &larr; 8/8/4 &larr; 4/4/4/4/4 &larr; 2/2/2/2/2/2/2/2/2/2
 
 ### Quick Sort
 
