@@ -111,20 +111,20 @@ int a = input.nextInt();
 
 **Math**
 
-| _type_ method(_type_ parameter)      | Description                           |
-| ------------------------------------ | ------------------------------------- |
-| _double_ abs(_double_ a)             | absolute value of a                   |
-| _double_ max(_double_ a, _double_ b) | maximum of a and b                    |
-| _double_ min(_double_ a, _double_ b) | minimum of a and b                    |
-| _double_ sin(_double_ theta)         | sine function                         |
-| _double_ cos(_double_ theta)         | cosine function                       |
-| _double_ tan(_double_ theta)         | tangent function                      |
-| _double_ exp(_double_ a)             | exponential ($e^a$)                   |
-| _double_ log(_double_ a)             | natural log ($log_{e} a$, or $ln{a}$) |
-| _double_ pow(_double_ a, _double_ b) | raise a to the bth power($a^b$)       |
-| _long_ round(_double_ a)             | round to the nearest integer          |
-| _double_ random()                    | random number in $[0.1)$              |
-| _double_ sqrt(_double_ a)            | square root of a                      |
+| _type_ method(_type_ parameter)      | Description                   |
+| ------------------------------------ | ----------------------------- |
+| _double_ abs(_double_ a)             | absolute value of a           |
+| _double_ max(_double_ a, _double_ b) | maximum of a and b            |
+| _double_ min(_double_ a, _double_ b) | minimum of a and b            |
+| _double_ sin(_double_ theta)         | sine function                 |
+| _double_ cos(_double_ theta)         | cosine function               |
+| _double_ tan(_double_ theta)         | tangent function              |
+| _double_ exp(_double_ a)             | exponential (e^a)             |
+| _double_ log(_double_ a)             | natural log (ln a)            |
+| _double_ pow(_double_ a, _double_ b) | raise a to the bth power(a^b) |
+| _long_ round(_double_ a)             | round to the nearest integer  |
+| _double_ random()                    | random number in [0.1)        |
+| _double_ sqrt(_double_ a)            | square root of a              |
 
 | _type_ variable | Description           |
 | --------------- | --------------------- |
@@ -145,13 +145,13 @@ Convert number to string for "+"
 
 Make numeric types match if no loss of precision
 
-- ex) `11*0.25`: int(11) $\rightarrow$ double(11.00)
+- ex) `11*0.25`: int(11) -> double(11.00)
 
 ### Function Call
 
 Follows return type
 
-- ex) `Integer.parseInt(String s)`: String $\rightarrow$ int
+- ex) `Integer.parseInt(String s)`: String -> int
 
 ### Explicit Cast
 
@@ -159,7 +159,7 @@ For values that belong to multiple types, we can cast the specific type
 
 - ex) small integers: can be short, int, long
 - ex) double can be truncated to int
-  - `(int)2.71828`: double $\rightarrow$ int, value is 2
+  - `(int)2.71828`: double -> int, value is 2
 
 **Relative Question (Exercise 1 - Q.1)**
 
@@ -168,7 +168,7 @@ For values that belong to multiple types, we can cast the specific type
 | `(7/2)*2.0`                 | double | 6.0   | -                                          |
 | `"700"-"5"`                 | -      | N/A   | Illegal operation on String                |
 | `700+5+"A"`                 | String | 705A  | int `705` converted to String              |
-| `3+(int)Math.random()`      | int    | 3     | double in $[0,1)$ truncated to int         |
+| `3+(int)Math.random()`      | int    | 3     | double in [0,1) truncated to int           |
 | `Integer.parseInt("1.5*2")` | -      | N/A   | Cannot parse integer from String `"1.5*2"` |
 
 ---
@@ -252,7 +252,7 @@ public class ~~~ implements ??? { ...   // ???: Interface
 
 - Every object is an instance of a class
 
-$\rightarrow$ Client can use ADT without knowing implementation details
+  -> Client can use ADT without knowing implementation details
 
 ### Modularity
 
@@ -404,7 +404,7 @@ It contains few static methods related to array
 
 - `Arrays.toString(a)`, `Arrays.equals(a, b)`, ...
 
-$\downarrow$ all equivalent code since default value of double is 0.0
+Code fragments below are all equivalent since default value of double is 0.0
 
 ```java
 double[] a;
@@ -438,7 +438,7 @@ double[][] a = new double[m][n];
 | `a[i].length`   | Number of columns for `i`th row |
 | `a[i]`          | Refer to `i`th row              |
 
-$\downarrow$ all equivalent code since default value of int is 0
+Code fragments are all equivalent since default value of int is 0
 
 ```java
 int[][] a = new int[3][3];
@@ -513,8 +513,8 @@ for(int i=0; i<n; i++) {
 
 - Placeholder for type name in definition which will be substituted into concrete data type in clients
 - ex) `Node` will be defined as `Node<E>` and inside its definition, we will refer `E` as type. Then, for `Node<String> a = new Node<String>`, `E` will be replaced into `String` for `a`
-- Java does not permit the creation of arrays of generics.\
-  $\downarrow$ create an Object array and explicitly cast it.
+- Java does not permit the creation of arrays of generics.
+  - Create an Object array and explicitly cast it.
 
 ```java
 private E[] data = new E[capacity]; //illegal
@@ -597,26 +597,26 @@ public static class SinglyLinkedList<E> {
 
 ### Big-Oh Notation
 
-- $f(n)=O(g(n))\Leftrightarrow$ $\exists c>0, n_{0}\ge 1$ s.t. $f(n)\le c\cdot g(n)$, for $n\ge n_{0}$
+- ![Definition](http://www.sciweavers.org/tex2img.php?eq=f%28n%29%3DO%28g%28n%29%29%20%5Cleftrightarrow%20%5Cexists%20c%3E0%2C%20n_%7B0%7D%5Cge%201%5Ctext%7B%20s.t.%20%7Df%28n%29%3C%3D%20c%5Ccdot%20g%28n%29%5Ctext%7B%2C%20for%20%7Dn%5Cge%20n_%7B0%7D&bc=White&fc=Black&im=png&fs=12&ff=txfonts&edit=0)
 - Use only the fastest-growing term
-- Characterize a function as closely as possible ($2n\ne O(n^2)$)
-- Do not include constant factors and lower-order terms ($3n+5\ne O(3n)$)
+- Characterize a function as closely as possible (2n != O(n^2))
+- Do not include constant factors and lower-order terms (3n+5 != O(3n))
 
-\* linearithmic: $O(nlogn)$
+\* linearithmic: O(nlogn)
 
 #### Primitive operations
 
 | Time Complexity | Example                           |
 | --------------- | --------------------------------- |
-| $O(1)$          | Adding two numbers                |
+| O(1)            | Adding two numbers                |
 |                 | Assigning a value to a variable   |
 |                 | Comparing two numbers             |
 |                 | Length of the array               |
 |                 | Access to the element in an array |
 |                 | Calling a method                  |
 |                 | Returning from a method           |
-| $O(n)$          | Linear Search                     |
-| $O(n^2)$        | Nested Loop                       |
+| O(n)            | Linear Search                     |
+| O(n^2)          | Nested Loop                       |
 
 ---
 
@@ -679,8 +679,8 @@ It is related to how much it repeats totally
 
 **Problems**
 
-- Array may become full $\rightarrow$ limit on the collection size
-- Memory use of array is fixed $\rightarrow$ nonlinear
+- Array may become full -> limit on the collection size
+- Memory use of array is fixed -> nonlinear
 
 ### Linked list stack
 
@@ -854,8 +854,9 @@ public class ArrayList<E> implements List<E> {
 
 ### Dynamic Arrays (unbounded capacity)
 
-**fixed maximum capacity** cause inefficient waste or easily exhausting capacity\
-$\rightarrow$ Dynamically adjust the size of the array
+**fixed maximum capacity** cause inefficient waste or easily exhausting capacity
+
+-> Dynamically adjust the size of the array
 
 - if capacity is exhausted, requests a new, larger array
 - copies all references from the smaller array into the beginning of the new array
@@ -902,7 +903,7 @@ protected void resize(int capacity) {
 - Worst case (doubling) takes O(n)
 - Most case takes O(1)
 
-$\rightarrow$ for $n=2^k$, total running time of n push operations is $T(n) = n+1+2+4+\cdots+2^k=n+2^{k+1}-1=3n-1=O(n)$.
+  -> for n=2^k, total running time of n push operations is T(n) = n+1+2+4+ ... +2^k=n+2^{k+1}-1=3n-1=O(n).
 
 Thus, amortized running time of each push operation is O(1) in doubling-and-halving strategy
 
@@ -911,13 +912,13 @@ Similarly, pop operation takes worst O(n), amortized O(1)
 **Relative Question (Quiz 1 - Q.3, Q.4)**
 
 - Q3: increasing two cells per push / total running time of n push operations on an empty dynamic array
-  - $T(n)=n + 1+3+5+\cdots+n=O(n^2)$: Quadratic
+  - T(n)=n + 1+3+5+ ... +n=O(n^2): Quadratic
 - Q4: double when full, half when half-full / worst-case running time of n push, pop operations on an empty dynamic array
   - Specific scenario
   - push n/2+1 which will made the array size n
   - pop will half the array
   - repeat push and pop then every operation will affect the size and take linear time
-  - for $n=2^k, T(n) = (n/2+1)+(1+2+4+\cdots+n/2)+(n/4)\times((n/2+1)+(n/2))=O(n^2)$: Quadratic
+  - for n=2^k, T(n) = (n/2+1)+(1+2+4+ ... +n/2)+(n/4)\*((n/2+1)+(n/2))=O(n^2): Quadratic
 
 ### Iterators
 
@@ -1037,9 +1038,9 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
 - Every node has at most two children
 - Each child node is a left child or a right child
 - A left child precedes a right child in the order of a children of a node
-- Level _d_ has at most $2^d$ nodes
-- Total number of nodes: $n$, height: $h$
-  - $h+1\le n \le 2^{h+1}-1$
+- Level _d_ has at most 2^d nodes
+- Total number of nodes: n, height: h
+  - h+1<= n <= 2^{h+1}-1
 
 **Full Binary Tree** Each node has either zero or two children (= every internal node has exactly two children)
 **Complete binary Tree** The nodes at level _h_ reside in the leftmost possible positions at that level
@@ -1074,9 +1075,9 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
 **Comparable** Interface based on the natural ordering
 
 - Promise to provide `a.compareTo(b)` method, which returns an integer with following meaning:
-  - $i<0\rightarrow a<b$
-  - $i=0\rightarrow a=b$
-  - $i>0\rightarrow a>b$
+  - i<0 -> a<b
+  - i=0 -> a=b
+  - i>0 -> a>b
 - If it is incompatible type or either is null, throws an exception
 
 ```java
@@ -1155,7 +1156,7 @@ public class MaxPQ<Key extends Comparable<Key>>
 - **heap-ordered** key in each node is larger than or equal to the keys in that node's two children
   - **Max-heap** a[k/2] >= a[k], **Min-heap** a[k/2] <= a[k]
 - Array representation
-  - 1-based indexing $\rightarrow$ simplifies arithmetic
+  - 1-based indexing -> simplifies arithmetic
   - Take nodes in level order
   - a[1]: root, a[2]: left child of root, a[3]: right child of root, ...
 - Can use array indices to move through tree
@@ -1241,15 +1242,15 @@ public Key delMax() {
 ### Heapsort
 
 1. Heap construction: Create a max-heap with all _n_ keys using bottom-up method from the last element of heap
-   - Assume that $n=2^k$. Then the height of tree is $k$.
-   - For each subheap with height $h$, it compares $h$ time.
-   - Number of subheap with height $h$ is $2^{k-h}$.
-   - Thus, total running time of heap construction is $\sum_{h=0}^{k}{2^{k-h}h}=k+2(k-1)+\cdots+2^{k}(k-k)=2^{k+1}-1-(k+1)=O(n)$
+   - Assume that n=2^k. Then the height of tree is k.
+   - For each subheap with height h, it compares h time.
+   - Number of subheap with height h is 2^{k-h}.
+   - Thus, total running time of heap construction is k+2(k-1)+ ... +2^{k}(k-k)=2^{k+1}-1-(k+1)=O(n)
 2. Sortdown
    - Repeatedly remove the maximum key
    - Move it to last position in the array. Since heap shrinks, it is not included in heap.
    - `sink()` to reheapify
-   - jth sink takes $O(log(N-j+1))$. Thus it totally takes $O(nlogn)$
+   - jth sink takes O(log(N-j+1)). Thus it totally takes O(nlogn)
 
 **Relative Question (Quiz 2 - Q.5)**
 
@@ -1302,8 +1303,9 @@ public Key delMax() {
 - Division Method
   - `key.hashCode() % N` or `Math.abs(key.hashCode()) % N`
   - take N be a prime number helps 'spread out' the distribution
-  - For minimum integer($-2^31$) as hashcode, it cannot be mapped into $[0, M-1]$ since it is larger than maximum integer.
-  - `(key.hashCode() & 0x7fffffff) % M` would be okay \*Two's complement
+  - For minimum integer(-2^31) as hashcode, it cannot be mapped into [0, M-1] since it is larger than maximum integer.
+  - `(key.hashCode() & 0x7fffffff) % M` would be okay
+    - Two's complement
 
 ### Collision Resolution
 
@@ -1311,13 +1313,13 @@ public Key delMax() {
 
 **Seperate chaining symbol table**
 
-- Use an array of $M$ linked lists, where $M<N$
-  - Hash: Map key to integer in $[0, M-1]$
+- Use an array of M linked lists, where M<N
+  - Hash: Map key to integer in [0, M-1]
   - Insert: put at front of its chain if not already there
   - Search: search along the chain
-- If we have $m$ lists and $n$ keys, average length of the lists $\alpha = n/m$, which is referred as **load factor**
+- If we have m lists and n keys, average length of the lists a = n/m, which is referred as **load factor**
 - With uniform hashing assumption, every key is equally likely to be hashed to one of m indices. In other words, length of chains can be assumed as load factor.
-  - insert / search average takes O($\alpha$)=O(1)
+  - insert / search average takes O(a)=O(1)
 
 ```java
 public class SeperateChainingHashST<Key, Value> {
@@ -1341,11 +1343,11 @@ public class SeperateChainingHashST<Key, Value> {
 
 **Open addressing** find next empty slot, put it there
 
-- **Linear Probing** $[h(x) + i] \mod M$ for i= 1,2,3,…
+- **Linear Probing** [h(x) + i] mod M for i= 1,2,3,…
   - Clustering
-- **Quadratic Probing** $[h(x) + i^2] \mod M$ for i= 1,2,3,…
+- **Quadratic Probing** [h(x) + i^2] mod M for i= 1,2,3,…
   - Secondary clustering
-- **Double Probing** $[h(x) + i\times h'(x)] \mod M$ for i= 1,2,3,…
+- **Double Probing** [h(x) + i* h'(x)] mod M for i= 1,2,3,…
   - More difficult to implement the delete operation
 
 ### Set
@@ -1374,7 +1376,7 @@ public class SeperateChainingHashST<Key, Value> {
 - Insert
   - Shape of tree depends on insertion order
   - get/put/remove take O(h) times where h is height of tree
-    $\rightarrow$ need to be balanced
+    -> need to be balanced
 
 ### Balanced Search Trees
 
@@ -1432,12 +1434,12 @@ public class SeperateChainingHashST<Key, Value> {
 
 **Top-down** Divide and Merge
 
-- ex) 20 $\leftarrow$ 10/10 $\leftarrow$ 5/5/5/5 $\leftarrow$ 3/2/3/2/3/2/3/2 $\leftarrow$ 2/1/1/1/2/1/1/1/2/1/1/1/2/1/1/1 $\leftarrow$ 1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1
+- ex) 20 <- 10/10 <- 5/5/5/5 <- 3/2/3/2/3/2/3/2 <- 2/1/1/1/2/1/1/1/2/1/1/1/2/1/1/1 <- 1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1
 
 **Bottom-up** Partially sort and merge
 
 - `int lo=0; lo<N-sz; lo += sz+sz`
-- ex) 20 $\leftarrow$ 16/4 $\leftarrow$ 8/8/4 $\leftarrow$ 4/4/4/4/4 $\leftarrow$ 2/2/2/2/2/2/2/2/2/2
+- ex) 20 <- 16/4 <- 8/8/4 <- 4/4/4/4/4 <- 2/2/2/2/2/2/2/2/2/2
 
 ### Quick Sort
 
