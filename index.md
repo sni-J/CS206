@@ -1139,15 +1139,16 @@ public class BST<E extends Comparable<E>> implements Tree<E> {
 - Easily converted each other
 
 public class MaxPQ<Key extends Comparable<Key>>
-| Return type | Method | Description | unordered array | ordered array |
+
+| Return type | Method         | Description                             | unordered array | ordered array |
 | ----------: | :------------- | --------------------------------------- | --------------- | ------------- |
-| | MaxPQ() | create an empty priority queue | | |
-| | MaxPQ(Key[] a) | create a priority queue with given keys | | |
-| void | insert(Key v) | insert a key into the priority queue | O(1) | O(N) |
-| Key | delMax() | return and remove the largest key | O(N) | O(1) |
-| boolean | isEmpty() | is the priority queue empty? | | |
-| Key | max() | return the largest key | O(N) | O(1) |
-| int | size() | number of entries in the priority queue | | |
+|             | MaxPQ()        | create an empty priority queue          |                 |               |
+|             | MaxPQ(Key[] a) | create a priority queue with given keys |                 |               |
+|        void | insert(Key v)  | insert a key into the priority queue    | O(1)            | O(N)          |
+|         Key | delMax()       | return and remove the largest key       | O(N)            | O(1)          |
+|     boolean | isEmpty()      | is the priority queue empty?            |                 |               |
+|         Key | max()          | return the largest key                  | O(N)            | O(1)          |
+|         int | size()         | number of entries in the priority queue |                 |               |
 
 ### (Binary) Heap
 
