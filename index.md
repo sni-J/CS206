@@ -1138,7 +1138,7 @@ public class BST<E extends Comparable<E>> implements Tree<E> {
 
 - Easily converted each other
 
-public class MaxPQ<Key extends Comparable<Key>>
+public class MaxPQ<Key extends Comparable\<Key>>
 
 | Return type | Method         | Description                             | unordered array | ordered array |
 | ----------: | :------------- | --------------------------------------- | --------------- | ------------- |
