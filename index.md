@@ -917,7 +917,7 @@ Similarly, pop operation takes worst O(n), amortized O(1)
   - push n/2+1 which will made the array size n
   - pop will half the array
   - repeat push and pop then every operation will affect the size and take linear time
-  - for $n=2^k, T(n) = ({{n}\over{2}}+1)+(1+2+4+\cdots+{{n}\over{2}})+({{n}\over{4}})\times(({{n}\over{2}}+1)+({{n}\over{2}}))=O(n^2)$: Quadratic
+  - for $n=2^k, T(n) = (n/2+1)+(1+2+4+\cdots+n/2)+(n/4)\times((n/2+1)+(n/2))=O(n^2)$: Quadratic
 
 ### Iterators
 
